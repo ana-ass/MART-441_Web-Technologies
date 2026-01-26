@@ -1,0 +1,180 @@
+body, html {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("images/forest_background.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.description-container {
+    min-height: 50vh;
+    font-size: 2em;
+}
+
+.description {
+    margin: 25vh auto;
+    padding: 1em;
+    text-align: center;
+    width: 75%;
+    min-width: 300px;
+    color:antiquewhite;
+    background-color: rgba(147, 105, 85);
+
+}
+
+@media (max-width: 865px) {
+    .description-container {
+        font-size: 1.5em;
+    }
+}
+
+.hero {
+    height: 100vh;
+    min-height: 740px;
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("images/forest_background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .7);
+}
+
+.hero .intro {
+    font-size: 20pt;
+    color:antiquewhite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2em;
+    text-align: center;
+    background-color: rgba(120, 120, 120, 0.7);
+}
+
+.title h1 {
+    font-family: 'Lato', sans-serif;
+    font-size: 3em;
+    letter-spacing: 0.2em;
+}
+
+.title h2 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 0.5em;
+}
+
+.hero .nav {
+    font-family: 'Lato', sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    color:antiquewhite;
+    margin-top: 2em;
+    font-size: 1.5em;
+    display: flex;
+    flex-direction: row;
+}
+
+.hero .nav a {
+    flex-grow: 1;
+    color:antiquewhite;
+    text-decoration: none;
+}
+
+.hero .nav-item {
+    font-size: 1em;
+    padding: 0.5em 1.5em;
+    margin: 0, 0.5em;
+    text-align: center;
+}
+
+@media only screen and (max-device-width: 1366px) {
+    .parallax {
+        background-attachment: scroll;
+    }
+}
+
+@media (max-width: 865px){
+    .hero {
+        min-height: 730px;
+    }
+    .hero .intro {
+        font-size: 18pt;
+    }
+}
+
+@media (max-width: 585px) {
+    .hero {
+        min-height: 500px;
+    }
+    .hero .intro {
+        margin: 0;
+        margin-top: 50px;
+        font-size: 13pt;
+    }
+}
+
+@media (max-width: 445px) {
+    .hero .intro {
+        font-size: 12pt;
+    }
+}
+
+.menu {
+    box-sizing: border-box;
+    min-height: 100vh;
+    padding: 3em;
+    background-color: rgb(53, 28, 14);
+    color:antiquewhite;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.menu h1{
+    font-family: 'Lato', sans-serif;
+}
+
+.menu .menu-group-container {
+    display: flex;
+    flex-flow: row wrap;
+    flex-grow: 1;
+    justify-content: space-evenly;
+}
+
+.menu .menu-group {
+    padding: 1em;
+    min-width: 300px;
+    max-width: 500px;
+}
+
+.menu .menu-head {
+    font-style: italic;
+    font-size: 2.5em;
+    padding: 1em;
+}
+
+.menu .menu-item {
+    text-align: center;
+    font-style: normal;
+}
+
+hr {
+    display: block;
+    margin-top: 0.5;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+    color:antiquewhite;
+    background-color:antiquewhite;
+}
