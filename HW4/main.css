@@ -1,0 +1,32 @@
+body {
+    background-color: rgb(182, 153, 115);
+    text-align: center;
+    align-content: center;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.img {
+    border-style: solid;
+    border-width: 2px;
+    border-color: white;
+}
+
+.header {
+    padding: 5px;
+    text-align: center;
+    background-color: rgb(141, 84, 43);
+    color: white;
+    font-size: 20px;
+    text-decoration: underline;
+    margin-bottom: 0px;
+}
+
+.storycontent {
+    background-color: rgb(141, 84, 43);
+    display: block;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    position: relative;
+    padding: 10px;
+}
