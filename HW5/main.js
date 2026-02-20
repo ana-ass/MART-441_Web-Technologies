@@ -36,7 +36,7 @@ function getChoice1()
     else
     {
         //while loop will not erase text on page so when answer wrong, can retype.
-        alert("Invalid answer, please retry with an acceptable answer.");
+        alert(myChoice +  " " + "is an invalid answer, please retry with an acceptable answer.");
         t=false;
         return;
 
@@ -74,7 +74,7 @@ function getChoice2()
     }
     else 
     {
-        alert("Invalid answer, please retry with an acceptable answer.");
+        alert(answer +  " " + "is an invalid answer, please retry with an acceptable answer.");
         t=false;
         return;
     }
@@ -111,7 +111,7 @@ function getChoice3()
     }
     else
     {
-        alert("Invalid answer, please retry with an acceptable answer.");
+        alert(answer +  " " + "is an invalid answer, please retry with an acceptable answer.");
         t=false;
         return;
     }
@@ -146,7 +146,7 @@ function getChoice4()
     }
     else
     {
-        alert("Invalid answer, please retry with an acceptable answer.");
+        alert(answer +  " " + "is an invalid answer, please retry with an acceptable answer.");
         t=false;
         return;
     }
@@ -181,7 +181,7 @@ function getChoice5()
     }
     else
     {
-        alert("Invalid answer, please retry with an acceptable answer.");
+        alert(answer +  " " + "is an invalid answer, please retry with an acceptable answer.");
         t=false;
         return;
     }
@@ -217,7 +217,9 @@ function getChoice6()
     }
     else
     {
-        theQuestion.innerHTML = "Invalid answer, please refresh and try again"
+        alert(answer +  " " + "is an invalid answer, please retry with an acceptable answer.");
+        t=false;
+        return;
     }
 }
 }
