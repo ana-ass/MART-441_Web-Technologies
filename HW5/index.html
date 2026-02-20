@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Choose Your Own Adventure Story</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js"></script>
+</head>
+
+<body>
+
+<div class="header">
+<h1>A Cat's Life</h1>
+ <img src="images/BellaCodingCatAdv.png" class="img" id="mainImage"/>
+
+</div>
+<div class="storycontent">
+    <div id="question">
+        <br>
+        Bella, the Coding Cat, has decided to offer an olive branch and show you a glimpse into the life of an assistant to a budding developer.
+    </br>
+        Every good day starts with breakfast, and the developer has a serious choice to make.
+    <br>
+        One cup of coffee or two?
+    <br> 
+</div>
+
+</div>
+
+<div class="buttons">
+
+<input type ="text" size="25" id="choice" placeholder="Enter One or Two">
+<button id="btnSubmit" onclick="getChoice1();">Continue</button>
+
+<input type="text" size="25" id="choice2" placeholder="Enter More or Enough" style="display:none">
+<button id="btnSubmit2" onclick="getChoice2();" style="display:none">Continue</button>
+
+<input type="text" size="25" id="choice3" placeholder="Enter Code or Design" style="display:none">
+<button id="btnSubmit3" onclick="getChoice3();" style="display:none">Continue</button>
+
+<input type="text" size="25" id="choice4" placeholder="Enter Remind or Wait" style="display:none">
+<button id="btnSubmit4" onclick="getChoice4();" style="display:none">Continue</button>
+
+<input type="text" size="25" id="choice5" placeholder="Enter Play or Sleep" style="display:none">
+<button id="btnSubmit5" onclick="getChoice5();" style="display:none">Continue</button>
+
+<input type="text" size="25" id="choice6" placeholder="Enter Continue or Push" style="display:none">
+<button id="btnSubmit6" onclick="getChoice6();" style="display:none">Continue</button>
+
+<button id="resetbtn" type="submit" onClick="refreshPage();" style="display:none">Play Again?</button>
+
+</div>
+
+
+</body>
+</html>
