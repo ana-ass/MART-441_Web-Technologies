@@ -1,0 +1,55 @@
+body {
+    background-color: rgb(201, 224, 216);
+}
+
+.divTable{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    flex-wrap: wrap;
+}
+.divTableRow {
+    display: table-row;
+    text-align: center;
+}
+.divTableHeading {
+    background-color: rgb(227, 227, 229);
+    display: table-header-group;
+    font-weight: bold;
+}
+.divTableCell, .divTableHead {
+    display: table-cell;
+    padding: 3px 10px;
+    position: relative;
+    height: 50%;
+    width: 50%;
+    text-align: center;
+}
+.divTableBody {
+    display: table-row-group;
+}
+.header {
+    text-align: center;
+    color:floralwhite;
+    font-weight: bold;
+    background-color: teal;
+    margin: auto;
+    border-style: solid;
+    border-color:rgb(255, 255, 255);
+}
+hr {
+    width: 50%;
+    margin: 0 auto;
+}
+.stat-label{
+    font-weight:bold;
+    margin: 5px;
+}
+.stat-content{
+    font-weight:bold;
+}
+.divTableCellFinal, .divTableRowFinal, .divTableBodyFinal, .divTableFinal{
+    text-align:center;
+    margin: auto;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Memory Matching Game</title>
+        <script src="script.js"></script>
+        <link rel ="stylesheet" type="text/css" href="style.css">
+    </link>
+    </head>
+
+    <body onload="playerInfo(); finalCount();">
+        <div class="header">
+        <h1>Memory Matching Game Results</h1>
+        <hr>
+        <br>
+
+        <div class="divTableFinal">
+            <br>
+            <div class="divTableBodyFinal">
+                <div class="divTableRowFinal">
+                    <div class="divTableCellFinal">First Name</div>
+                    <div class="divTableCellFinal"><span id="txtFirst"></span></div>
+                </div>
+                <br>
+                <div class="divTableRowFinal">
+                    <div class="divTableCellFinal">Last Name</div>
+                    <div class="divTableCellFinal"><span id="txtLast"></span></div>
+                </div>
+                <br>
+                <div class="divTableRowFinal">
+                    <div class="divTableCellFinal">Age</div>
+                    <div class="divTableCellFinal"><span id="txtAge"></span></div>
+                </div>
+                <br>
+                <div class="divTableRowFinal">
+                    <div class="divTableCellFinal">Final Attempts</div>
+                    <div class="divTableCellFinal"><span id="finalMoves"></span></div>
+                </div>
+                <br>
+                <button id="resetbtn" type="submit" onClick="refreshPage();" style="display:inline-block">Reset Game</button>
+                <br>
+            </div>
+        </div>
+    </div>
+    </body>
+
+</html>
