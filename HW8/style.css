@@ -1,0 +1,46 @@
+body {
+    background-color: rgb(172, 173, 188);
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+.display {
+    border-style: solid;
+    align-content: center;
+    border-width: 2px;
+    border-color: white;
+    box-sizing: border-box;
+    height: auto;
+    width:fit-content;
+    display: block;
+    margin: auto;
+}
+.content-display{
+    text-align: center;
+    color:floralwhite;
+    background-color: rgba(107, 109, 134, 0.896);
+    margin: auto;
+    border-style: solid;
+    border-color:rgb(255, 255, 255);
+    padding: 10px;
+}
+.tit-display {
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+hr {
+    width: 25%;
+    margin: 0 auto;
+}
+.desc-display {
+    font-size: 18px;
+    text-align: center;
+    padding: 5px;
+    margin: auto;
+    width: 50%;
+}
+
+.pub-info {
+    font-style: italic;
+    font-size: 12px;
+}
