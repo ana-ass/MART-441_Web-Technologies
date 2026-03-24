@@ -1,0 +1,85 @@
+#square {
+    width: 100px;
+    height: 100px;
+    background: rgba(131, 252, 147, 0.736);
+    position: absolute;
+    left: 0;
+    top:400;
+}
+
+#circle{
+    height: 50px;
+    width: 50px;
+    background-color:rgba(125, 181, 249, 0.641);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 30%;
+}
+
+#circle1{
+    height: 25px;
+    width: 25px;
+    background-color:rgba(125, 241, 249, 0.641);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 10%;
+}
+
+#circle2 {
+    height: 10px;
+    width: 10px;
+    background-color:rgba(249, 125, 201, 0.641);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 20%;
+}
+
+.circleShapes{
+    top: 0;
+    left: 30%;
+    position: absolute;
+    display: inline-block;
+}
+
+#triangle{
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 60px solid rgba(255, 203, 228, 0.858);
+    left: 90%;
+    top: 300;
+    position: absolute;
+}
+.stuff{
+    font-size:larger;
+    position: absolute;
+    color: black;
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(250, 235, 215, 0.725);
+    background-size: contain;
+    left: 0px;
+    top: 10px;
+}
+
+#third {
+    background: pink;
+    color: black;
+}
+
+#seasons img
+{
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 400;
+}
+
+body{
+    background-color:antiquewhite;
+}
