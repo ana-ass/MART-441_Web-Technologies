@@ -1,0 +1,11 @@
+Reflection:
+
+     What I wanted to do for this assignment was a basic pokedex entry.  First, I found a dataset by searching "Cool Datasets" and found a Pokedex one here: "https://github.com/jdorfman/awesome-json-datasets".  This dataset had more information than I actually needed so I copy/pasted the JSON file and hand deleted all the information I didn't need.
+
+     Next, I knew how to randomly generate an id number, so that is the first step I did when it came to my code.  When it came down to learning how to do everything else I used my own knowledge and combined it with my research.
+
+     First, I looked at the example code from the class.  These examples and going through them in my own code helped me understand why things worked the way they did.  I applied what was in the lesson to especially help wuth the AJAX and XHTTP.  This is where I hit my first snag, both Chrome and Firefox gave me the CORS errors.  So, I researched and found an extension for Visual Studio Code called "Live Server" which helped my code run with 0 errors.
+
+     Next, I looked online to help me organize the pokemon data.  I took the top 6 search results and opened the tabs, going through each individual example and working through them until landing on something that worked and I knew how to explain why it worked.  The console.log addition was to help me debug in case there was a problem.  I was working with 151 sets of data and not just three, so I knew this task would need some extra help getting it to work.
+
+     From there I started to replace and build-up my code combinging forumns, research, my own knowledge, and the examples given.  This is the way I have found helps me code most effectively, and I have heard from others that it is the best way to code even in the field.  Researching, having other's explain what they did and why it works, trying to frankenstein it into your own code, etc.  I do not like Generative AI and will not use it in my workflow, I like to learn from other's experience and to do the work into understanding code myself.
