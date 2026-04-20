@@ -1,3 +1,21 @@
+/*
+Author: Anabel Assante
+File Name: HW14 part1.html
+Date: 04/20/2026
+Purpose: HW 14 - Phaser.io
+
+Required Add-ons:
+Spacebar Jump
+Altered Star Gravity
+New Player Sprite
+Level Design Upgrade (More/Meaningful Platforms)
+Second Collectible
+
+Extra Add-ons:
+Game Over screen + Updated Score
+Player reset when Bombs Spawn for increased difficulty
+*/
+
 var config = {
     type: Phaser.AUTO,
     width: 800,
