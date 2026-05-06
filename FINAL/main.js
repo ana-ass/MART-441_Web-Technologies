@@ -5,16 +5,17 @@ Date: 05/06/2026
 Purpose: Final - Phaser.io
 */
 
-
+//defining Base Level, building of the game
 class BaseLevel extends Phaser.Scene {
     constructor(key) {
         super({key});
-
+//want wolves to be chosen to spawn
         this.shouldSpawnWolves = false;
         this.initialWolfCount = 0;
     }
 
 preload () {    
+    //declaring assets, all spritesheet width's determined by total width/number of frames
     this.load.image('sky', 'assets/orig.png');
     this.load.image('platform', 'assets/platform.png');
     this.load.image('ground', 'assets/ground.png')
@@ -28,8 +29,9 @@ preload () {
 
     this.load.audio('theme', 'assets/11_The_Mighty_Kingdom.mp3');
     }
-
+//need the data set for the score to stay
 create(data) {
+    //declaring music registry.  This is to keep music from restarting every level
     if(!this.registry.get('music')){
         this.music = this.sound.add('theme', {
             loop: true,
@@ -39,7 +41,7 @@ create(data) {
         this.registry.set('music', this.music);
     }
    
-
+//keyboard music controls
     this.input.keyboard.on('keydown_M', () => {
         let music = this.registry.get('music');
 
@@ -51,63 +53,66 @@ create(data) {
             music.resume();
         }
     });
+//declaring score at start, able to change and gameOver state
     this.score = data.score ?? 0;
     this.gameOver = false;
 
+//building my background/platforms
     this.add.image(400, 300, 'sky');
 
     this.platforms = this.physics.add.staticGroup();
     this.createPlatforms();
-
+//spawning in Player, bouncy because bird/chicken
     this.player = this.physics.add.sprite(100, 450, 'dude');
     this.player.setBounce(0.2);
     this.player.setCollideWorldBounds(true);
-
+//declaring all animations
     this.createAnimations();
-
+//key input for controls
     this.cursors = this.input.keyboard.createCursorKeys();
     this.spaceKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
-
+//adding my coins
     this.coins = this.physics.add.group({
         key: 'coin',
         repeat: this.coinCount,
         setXY: { x: 20, y:-100, stepX: 70}
     });
 
-
+//declaring coin animation/bounce
     this.coins.children.iterate(c => {
         c.play('spin');
         c.setBounceY(Phaser.Math.FloatBetween(0.2, 0.4));
     });
-
+//making/declaring eggs
     this.eggs = this.physics.add.group({
         key: 'egg',
         repeat: this.eggCount - 1,
         setXY: { x: 20, y: -100, stepX: 250}
     });
-
-    this.eggs.children.iterate(h => {
-        h.setBounceY(Phaser.Math.FloatBetween(0.2, 0.4));
+//setting egg/bounce
+    this.eggs.children.iterate(e => {
+        e.setBounceY(Phaser.Math.FloatBetween(0.2, 0.4));
     });
-
+//adding wolves to spawn
     this.wolves = this.physics.add.group();
-
+//display/update score
     this.scoreText = this.add.text(16, 16, 'Score: ' + this.score, { fontSize: '32px', fontFamily: 'GameFont', fill: '#fff'});
-
+//colliders
     this.physics.add.collider(this.player, this.platforms);
     this.physics.add.collider(this.coins, this.platforms);
     this.physics.add.collider(this.wolves, this.platforms);
     this.physics.add.collider(this.eggs, this.platforms);
-
+//collider with functions
     this.physics.add.overlap(this.player, this.coins, this.collectCoin, null, this);
     this.physics.add.overlap(this.player, this.eggs, this.collectEgg, null, this);
     this.physics.add.collider(this.player, this.wolves, this.hitWolf, null, this);
-
+//wolf Spawn
     if (this.shouldSpawnWolves){
         this.spawnInitialWolves();
     }
 }
     update() {
+        //keyboard controls
         if (this.cursors.left.isDown)
         {
             this.player.setVelocityX(-160);
@@ -131,7 +136,7 @@ create(data) {
         {
             this.player.setVelocityY(-330);
         }
-
+//wolf jump, movements, and avoiding overlap behavior
         this.wolves.children.iterate(wolf => {
             if (!wolf || !wolf.body) return;
     
@@ -165,7 +170,7 @@ create(data) {
                     }
                 }
             })
-
+//wolf following player even onto platforms
             let playerAbove = this.player.y < wolf.y - 20;
             let closeX = Math.abs(this.player.x - wolf.x) < 150;
             let onGround = wolf.body.touching.down;
@@ -175,7 +180,7 @@ create(data) {
             }
         })
     }
-
+//updating all animations
     createAnimations() {
         this.anims.create({
             key: 'left',
@@ -211,7 +216,7 @@ create(data) {
             repeat: -1
         });
     }
-
+//coin disappear and add to score upon collecting, bonus score not required
     collectCoin (player, coin)
     {
     coin.disableBody(true, true);
@@ -219,6 +224,7 @@ create(data) {
     this.score += 10;
     this.scoreText.setText('Score: ' + this.score);
 }
+//egg collection adds to score and determined going to the next level
     collectEgg(player, egg)
     {
         egg.disableBody(true, true);
@@ -231,6 +237,7 @@ create(data) {
     
         }  
 }
+//wolf spawn, lower bounce because lack of feathers
     spawnWolf() {
         let x = (this.player.x < 400) 
         ? Phaser.Math.Between(400, 800) 
@@ -244,14 +251,14 @@ create(data) {
 
         wolf.play('run');
     }
-
+//keeping wolf spawn contained
     spawnInitialWolves(){
         for (let i = 0; i < this.initialWolfCount; i++){
             this.spawnWolf();
         }
     }
 
-
+//player hitting wolf triggering game over
     hitWolf(player, wolf)
     {
     this.player.setTint(0xff0000);
@@ -267,7 +274,7 @@ create(data) {
 }
 
 }
-
+//level 1 class
 class Level1 extends BaseLevel {
     constructor() {
         super('Level1');
@@ -276,17 +283,18 @@ class Level1 extends BaseLevel {
         this.shouldSpawnWolves = true;
         this.initialWolfCount = 1;
     }
+    //spawn level platforms
     createPlatforms() {
         this.platforms.create(400, 568, 'ground').setScale(2).refreshBody();
         this.platforms.create(400, 400, 'platform');
         this.platforms.create(100, 250, 'platform');
     }
-
+//move to next scene and keep score
     nextLevel() {
         this.scene.start('Level2', {score: this.score});
     }
 }
-
+//level 2 class
 class Level2 extends BaseLevel {
     constructor() {
         super('Level2');
@@ -296,7 +304,7 @@ class Level2 extends BaseLevel {
         this.shouldSpawnWolves = true;
         this.initialWolfCount = 2;
     }
-    
+    //spawn level specific platforms
     createPlatforms() {
         this.platforms.create(400, 568, 'ground').setScale(2).refreshBody();
         this.platforms.create(650, 450, 'platform');
@@ -305,12 +313,13 @@ class Level2 extends BaseLevel {
         this.platforms.create(100, 150, 'platform');
         this.platforms.create(50, 450, 'platform');
     }
-
+//move to next scene, and keep score
     nextLevel() {
         this.scene.start('Level3', {score: this.score});
     }
 }
 
+//level 3 class
 class Level3 extends BaseLevel {
     constructor() {
         super('Level3');
@@ -320,6 +329,7 @@ class Level3 extends BaseLevel {
         this.shouldSpawnWolves = true;
         this.initialWolfCount = 3;
     }
+    //spawn level platforms
     createPlatforms() {
         this.platforms.create(400, 568, 'ground').setScale(2).refreshBody();
         this.platforms.create(600, 300, 'platform');
@@ -329,12 +339,12 @@ class Level3 extends BaseLevel {
         this.platforms.create(700, 70, 'platform');
         this.platforms.create(400, 450, 'platform');
     }
-
+//Game over, all levels completed
     nextLevel() {
-        alert('You beat the game!');
+        alert('You beat the game with a score of: ' + this.score + '!');
     }
 }
-
+//config to start Phaser game, where it ties in, and declaring the scene classes
 var config = {
     type: Phaser.AUTO,
     width: 800,
