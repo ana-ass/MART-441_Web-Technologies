@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'GameFont';
+    background: rgb(147, 208, 155);
+}
+@font-face {
+    font-family: 'GameFont';
+    src: url(assets/Planes_ValMore.ttf);
+}
+#title {
+    margin: 10px 0;
+    font-size: 64px;
+    color: white;
+}
+
+#GameTitle {
+    text-align: center;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+#controls {
+    margin-top: 2px;
+    font-size: 18px;
+    padding: 2px;
+    color: white;
+    display: inline-block;
+}
+
+#game-container {
+    width: 800px;
+    height: 600px;
+    border-width: 5px;
+    border-color: white;
+    border-style: solid;
+}
